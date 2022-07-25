@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Ajustes al Ejercicio
+  En app.component.ts, se gregaron los parametros a ser recuperados en la plantilla, para controlar con un [ngSwitch], si existe o no el Pokemon solicitdo.
+  Se agregó, en la consulta del Pokemon, la imagen correspondiente.
