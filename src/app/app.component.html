@@ -1,0 +1,62 @@
+<h1 style="color:brown"> Servicio Busca tu POKEMON Preferido **en construcción**</h1>
+<!--
+            =========================================
+                    LOS SERVICIOS
+            ==========================================
+Seran las causa principal que nos permitirá centralizar funcionalidades que pueden ser 
+usados  desde cualquier componente que lo requiera, o ser exclusividad de alguno de ellos
+Permite el matenimiento y funcionalidad de nuestra aplicacion 
+
+-->
+
+
+Nombre del Pokemon: <input type="text" placeholder="Ingresa tu Pokemon" [(ngModel)]="nombre" >
+<button class="" (click)="buscar()">Buscar</button>
+
+
+<div  [ngSwitch]= "existePokemon">
+
+    <div  *ngSwitchCase="'S'">
+
+        <ul>
+            <li>Nombre: {{pokemon.name}} </li>
+
+            <li>Peso: {{pokemon.weight}} </li>
+
+            <li>Altura: {{pokemon.height}} </li>
+
+            <li>Habilidades: 
+
+                <ol>
+                    <li *ngFor="let habilidad of pokemon.abilities">
+    
+                        {{habilidad.ability.name}}
+    
+                    </li>
+                </ol>
+            
+            
+            </li>
+    
+    
+        </ul>
+        
+        <div class="cat">
+
+            <img src="{{urlImage}}" alt="img no lista">
+        
+        </div>
+    
+    </div>    
+    
+    <div  *ngSwitchCase="'N'">
+        
+        <p class="msgError"> Mensaje: {{noEncontrado}}</p>
+        
+        <p class="msgError" *ngIf=" existePokemon=='N' ">  Recurso solicitado  No existe</p>
+    
+    </div>
+
+</div>
+
+
